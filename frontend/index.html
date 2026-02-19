@@ -1,19 +1,48 @@
 <!DOCTYPE html>
-<html lang='es-AR'>
-    <head>
-        <meta charset='utf-8'>
-        <title> Final Libre Proyecto Informático  </title>
-    </head>
+<html lang="es-AR">
+<head>
+    <meta charset="utf-8">
+    <title>Final Libre Proyecto Informático</title>
+</head>
+<body>
+
+    <h1>Equipo de desarrollo</h1>
     
-    <body>
+    <button id="btn-cargar">Cargar desarrolladores</button>
 
-        <h1> Equipo de desarrollo </h1>
-        
-        <button> Cargar desarrolladores </button>
-
-        <main> 
-            <!-- Mostrar la información completa de todos los desarrolladores en este espacio -->
+    <main id="contenedor-desarrolladores">
         </main>
-    </body>
-    
+
+    <script>
+        const botonCargar = document.getElementById('btn-cargar');
+        const contenedor = document.getElementById('contenedor-desarrolladores');
+
+        botonCargar.addEventListener('click', () => {
+            
+            // petición GET a tu API en Flask
+            fetch('http://127.0.0.1:5000/desarrolladores')
+                .then(response => response.json()) 
+                .then(data => {
+                    contenedor.innerHTML = '';
+
+                    // devuelve la lista de desarrolladores que mandó la base de datos
+                    data.forEach(dev => {
+                        const tarjetaHTML = `
+                            <div style="border: 1px solid #ccc; margin: 10px; padding: 15px; border-radius: 5px; background-color: #f9f9f9;">
+                                <h3>${dev.name} (ID: ${dev.id})</h3>
+                                <img src="${dev.avatar}" alt="${dev.name}" style="max-width: 120px; border-radius: 50%;">
+                                <p><strong>Habilidades:</strong> ${dev.skills}</p>
+                                <p><strong>Salario:</strong> $${dev.salary}</p>
+                            </div>
+                        `;
+                        contenedor.innerHTML += tarjetaHTML;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener los datos:', error);
+                    contenedor.innerHTML = '<p style="color:red;">Ocurrió un error al cargar los desarrolladores.</p>';
+                });
+        });
+    </script>
+</body>
 </html>
