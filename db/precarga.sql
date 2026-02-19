@@ -3,8 +3,8 @@ CREATE TABLE developer (
     name VARCHAR(255) NOT NULL,
     skills  VARCHAR(255) NOT NULL,
     salary INT(6) NOT NULL,
-    avatar VARCHAR(255) NOT NULL,
-)
+    avatar VARCHAR(255) NOT NULL
+); 
 
 
 INSERT INTO developer (name, skills, salary, avatar) VALUES 
