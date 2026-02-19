@@ -1,0 +1,1 @@
+/* Codigo JS necesario para las funcionalidades de editar.html */
