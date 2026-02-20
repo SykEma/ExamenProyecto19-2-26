@@ -1,0 +1,23 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Api desarrolladores ",
+    "collectionId": "24fcdf6a-6fe4-4af6-9235-447cfc76fe61",
+    "dateExported": "2026-02-20T00:24:03.484Z",
+    "version": "1.4",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0bb5c46d-05dd-4088-a043-2b3b05d71d80",
+            "colId": "24fcdf6a-6fe4-4af6-9235-447cfc76fe61",
+            "containerId": "",
+            "name": "http://127.0.0.1:5000/desarrolladores",
+            "url": "http://127.0.0.1:5000/desarrolladores",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2026-02-20T00:23:32.814Z",
+            "modified": "2026-02-20T00:23:32.814Z",
+            "headers": []
+        }
+    ],
+    "ref": "iwTciRdcnYCd8fKKkgH5x9tVWm9wznxCXfYvOBqq_RJHoDE56tfEaLIWPouNxZLjO7XzFxtjq_-k_ONnexwTJw"
+}
